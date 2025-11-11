@@ -1,0 +1,408 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Rustic Country Color Palette */
+    --primary-wood: #8B4513;
+    --dark-wood: #654321;
+    --cream: #FFF8DC;
+    --warm-beige: #F5E6D3;
+    --rustic-red: #A0522D;
+    --forest-green: #2F4F2F;
+    --gold-accent: #DAA520;
+    --text-dark: #3E2723;
+    --text-light: #FFFFFF;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--cream);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, var(--dark-wood) 0%, var(--primary-wood) 100%);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    color: var(--text-light);
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-menu a:hover {
+    background-color: var(--gold-accent);
+    color: var(--text-dark);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(101, 67, 33, 0.7), rgba(139, 69, 19, 0.8)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238B4513" width="1200" height="600"/><path fill="%23654321" opacity="0.3" d="M0 300 Q300 200 600 300 T1200 300 L1200 600 L0 600 Z"/></svg>');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);
+    pointer-events: none;
+}
+
+.hero-content {
+    z-index: 1;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 4rem;
+    color: var(--text-light);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1s ease-out;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--gold-accent);
+    color: var(--text-dark);
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.cta-button:hover {
+    background-color: var(--rustic-red);
+    color: var(--text-light);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 3rem;
+    color: var(--primary-wood);
+    margin-bottom: 0.5rem;
+}
+
+.underline {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--gold-accent), var(--rustic-red));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* About Section */
+.about {
+    background-color: var(--warm-beige);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.signature {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 1.8rem;
+    color: var(--primary-wood);
+    margin-top: 2rem;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, var(--primary-wood), var(--rustic-red));
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.image-placeholder .icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.image-placeholder p {
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Products Section */
+.products {
+    background-color: var(--cream);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--warm-beige);
+    border: 3px solid var(--primary-wood);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--gold-accent);
+}
+
+.product-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 2rem;
+    color: var(--primary-wood);
+    margin-bottom: 1rem;
+}
+
+.product-card p {
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, var(--warm-beige) 0%, var(--cream) 100%);
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--text-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--gold-accent);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateX(5px);
+    border-left-color: var(--rustic-red);
+}
+
+.info-icon {
+    font-size: 2rem;
+}
+
+.info-item h4 {
+    color: var(--primary-wood);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-item p {
+    color: var(--text-dark);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, var(--dark-wood) 0%, var(--primary-wood) 100%);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-menu a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+}
