@@ -6,22 +6,22 @@
 }
 
 :root {
-    /* Rustic Country Color Palette */
-    --primary-wood: #8B4513;
-    --dark-wood: #654321;
-    --cream: #FFF8DC;
-    --warm-beige: #F5E6D3;
-    --rustic-red: #A0522D;
-    --forest-green: #2F4F2F;
-    --gold-accent: #DAA520;
-    --text-dark: #3E2723;
+    /* Sophisticated Rustic Color Palette */
+    --primary-wood: #6B4423;
+    --dark-wood: #4A2F1C;
+    --cream: #F5F1E8;
+    --warm-tan: #D4C5B0;
+    --rustic-brown: #8B6F47;
+    --forest-green: #3D5941;
+    --accent-copper: #B87333;
+    --text-dark: #2C1810;
     --text-light: #FFFFFF;
 }
 
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'Lato', sans-serif;
     color: var(--text-dark);
-    line-height: 1.6;
+    line-height: 1.8;
     background-color: var(--cream);
 }
 
@@ -33,12 +33,13 @@ body {
 
 /* Navigation */
 .navbar {
-    background: linear-gradient(135deg, var(--dark-wood) 0%, var(--primary-wood) 100%);
-    padding: 1rem 0;
+    background: var(--dark-wood);
+    padding: 1.2rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid var(--accent-copper);
 }
 
 .navbar .container {
@@ -50,9 +51,11 @@ body {
 
 .logo h1 {
     color: var(--text-light);
-    font-family: 'Covered By Your Grace', cursive;
+    font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .nav-menu {
@@ -65,26 +68,25 @@ body {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 400;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
+    text-transform: uppercase;
 }
 
 .nav-menu a:hover {
-    background-color: var(--gold-accent);
-    color: var(--text-dark);
-    transform: translateY(-2px);
+    color: var(--accent-copper);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(101, 67, 33, 0.7), rgba(139, 69, 19, 0.8)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238B4513" width="1200" height="600"/><path fill="%23654321" opacity="0.3" d="M0 300 Q300 200 600 300 T1200 300 L1200 600 L0 600 Z"/></svg>');
+    background: linear-gradient(rgba(44, 24, 16, 0.6), rgba(74, 47, 28, 0.6)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234A2F1C" width="1200" height="600"/></svg>');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 600px;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,8 +101,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);
+    background-image: none;
     pointer-events: none;
 }
 
@@ -110,41 +111,40 @@ body {
 }
 
 .hero-title {
-    font-family: 'Covered By Your Grace', cursive;
-    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
     color: var(--text-light);
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 1rem;
-    animation: fadeInDown 1s ease-out;
+    letter-spacing: 2px;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 300;
     color: var(--cream);
     margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    animation: fadeInUp 1s ease-out;
+    letter-spacing: 1px;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: var(--gold-accent);
-    color: var(--text-dark);
+    background-color: var(--accent-copper);
+    color: var(--text-light);
     padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
     text-decoration: none;
-    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--accent-copper);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1.2s ease-out;
 }
 
 .cta-button:hover {
-    background-color: var(--rustic-red);
-    color: var(--text-light);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background-color: transparent;
+    color: var(--accent-copper);
 }
 
 /* Section Styles */
@@ -158,23 +158,25 @@ section {
 }
 
 .section-header h2 {
-    font-family: 'Covered By Your Grace', cursive;
-    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: var(--primary-wood);
     margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .underline {
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(to right, var(--gold-accent), var(--rustic-red));
+    width: 80px;
+    height: 3px;
+    background: var(--accent-copper);
     margin: 0 auto;
-    border-radius: 2px;
 }
 
 /* About Section */
 .about {
-    background-color: var(--warm-beige);
+    background-color: var(--cream);
 }
 
 .about-content {
@@ -191,10 +193,12 @@ section {
 }
 
 .signature {
-    font-family: 'Covered By Your Grace', cursive;
-    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
     color: var(--primary-wood);
     margin-top: 2rem;
+    font-weight: 600;
 }
 
 .about-image {
@@ -204,28 +208,26 @@ section {
 }
 
 .image-placeholder {
-    background: linear-gradient(135deg, var(--primary-wood), var(--rustic-red));
-    border-radius: 20px;
+    background: var(--primary-wood);
+    border: 3px solid var(--accent-copper);
     padding: 3rem;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.image-placeholder .icon {
-    font-size: 5rem;
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.image-placeholder p {
+.image-placeholder .icon-text {
     color: var(--text-light);
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Products Section */
 .products {
-    background-color: var(--cream);
+    background-color: var(--warm-tan);
 }
 
 .product-grid {
@@ -235,41 +237,49 @@ section {
 }
 
 .product-card {
-    background: var(--warm-beige);
-    border: 3px solid var(--primary-wood);
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
+    background: var(--text-light);
+    border-left: 4px solid var(--accent-copper);
+    padding: 2.5rem 2rem;
+    text-align: left;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: relative;
 }
 
 .product-card:hover {
-    transform: translateY(-10px) rotate(1deg);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    border-color: var(--gold-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--primary-wood);
 }
 
-.product-icon {
-    font-size: 4rem;
+.product-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--warm-tan);
     margin-bottom: 1rem;
+    line-height: 1;
 }
 
 .product-card h3 {
-    font-family: 'Covered By Your Grace', cursive;
-    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--primary-wood);
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .product-card p {
     color: var(--text-dark);
     font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* Contact Section */
 .contact {
-    background: linear-gradient(135deg, var(--warm-beige) 0%, var(--cream) 100%);
+    background: var(--cream);
 }
 
 .contact-content {
@@ -285,68 +295,52 @@ section {
 
 .info-item {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
     background: var(--text-light);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border-left: 4px solid var(--gold-accent);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-top: 3px solid var(--accent-copper);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
 
 .info-item:hover {
-    transform: translateX(5px);
-    border-left-color: var(--rustic-red);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    border-top-color: var(--primary-wood);
 }
 
-.info-icon {
-    font-size: 2rem;
+.info-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-copper);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.info-item h4 {
+.info-content h4 {
+    font-family: 'Playfair Display', serif;
     color: var(--primary-wood);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
-.info-item p {
+.info-content p {
     color: var(--text-dark);
+    line-height: 1.6;
 }
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, var(--dark-wood) 0%, var(--primary-wood) 100%);
+    background: var(--dark-wood);
     color: var(--text-light);
     text-align: center;
     padding: 2rem 0;
+    border-top: 2px solid var(--accent-copper);
 }
 
 .footer p {
     font-size: 1rem;
-}
-
-/* Animations */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Responsive Design */
