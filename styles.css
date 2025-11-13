@@ -6,22 +6,21 @@
 }
 
 :root {
-    /* Sophisticated Rustic Color Palette */
-    --primary-wood: #6B4423;
-    --dark-wood: #4A2F1C;
-    --cream: #F5F1E8;
-    --warm-tan: #D4C5B0;
-    --rustic-brown: #8B6F47;
-    --forest-green: #3D5941;
-    --accent-copper: #B87333;
-    --text-dark: #2C1810;
+    /* Professional Rustic & Warm Color Palette */
+    --primary-wood: #8B5A3C;
+    --dark-wood: #5C3D2E;
+    --cream: #FAF6F1;
+    --warm-beige: #E8DCC8;
+    --rustic-brown: #A67C52;
+    --accent-gold: #C9A961;
+    --text-dark: #3E2723;
     --text-light: #FFFFFF;
 }
 
 body {
     font-family: 'Lato', sans-serif;
     color: var(--text-dark);
-    line-height: 1.8;
+    line-height: 1.7;
     background-color: var(--cream);
 }
 
@@ -34,12 +33,11 @@ body {
 /* Navigation */
 .navbar {
     background: var(--dark-wood);
-    padding: 1.2rem 0;
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    border-bottom: 2px solid var(--accent-copper);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar .container {
@@ -52,10 +50,15 @@ body {
 .logo h1 {
     color: var(--text-light);
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
 }
 
 .nav-menu {
@@ -69,23 +72,20 @@ body {
     text-decoration: none;
     font-weight: 400;
     font-size: 1rem;
-    letter-spacing: 0.5px;
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
-    text-transform: uppercase;
 }
 
 .nav-menu a:hover {
-    color: var(--accent-copper);
+    color: var(--accent-gold);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(44, 24, 16, 0.6), rgba(74, 47, 28, 0.6)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234A2F1C" width="1200" height="600"/></svg>');
+    background: linear-gradient(rgba(92, 61, 46, 0.85), rgba(92, 61, 46, 0.85)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238B5A3C" width="1200" height="600"/></svg>');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     min-height: 500px;
     display: flex;
     align-items: center;
@@ -101,7 +101,13 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: none;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 50px,
+        rgba(0, 0, 0, 0.03) 50px,
+        rgba(0, 0, 0, 0.03) 51px
+    );
     pointer-events: none;
 }
 
@@ -113,11 +119,10 @@ body {
 .hero-title {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-light);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     margin-bottom: 1rem;
-    letter-spacing: 2px;
 }
 
 .hero-subtitle {
@@ -125,26 +130,26 @@ body {
     font-weight: 300;
     color: var(--cream);
     margin-bottom: 2rem;
-    letter-spacing: 1px;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: var(--accent-copper);
-    color: var(--text-light);
-    padding: 1rem 2.5rem;
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
+    padding: 0.9rem 2.2rem;
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 2px solid var(--accent-copper);
+    border-radius: 50px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
-    background-color: transparent;
-    color: var(--accent-copper);
+    background-color: var(--rustic-brown);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Section Styles */
@@ -160,23 +165,21 @@ section {
 .section-header h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--primary-wood);
     margin-bottom: 0.5rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .underline {
     width: 80px;
     height: 3px;
-    background: var(--accent-copper);
+    background: var(--accent-gold);
     margin: 0 auto;
 }
 
 /* About Section */
 .about {
-    background-color: var(--cream);
+    background-color: var(--warm-beige);
 }
 
 .about-content {
@@ -194,11 +197,10 @@ section {
 
 .signature {
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: var(--primary-wood);
     margin-top: 2rem;
-    font-weight: 600;
 }
 
 .about-image {
@@ -209,25 +211,23 @@ section {
 
 .image-placeholder {
     background: var(--primary-wood);
-    border: 3px solid var(--accent-copper);
+    border-radius: 15px;
     padding: 3rem;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .image-placeholder .icon-text {
     color: var(--text-light);
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 600;
+    font-size: 1.4rem;
     line-height: 1.6;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 /* Products Section */
 .products {
-    background-color: var(--warm-tan);
+    background-color: var(--cream);
 }
 
 .product-grid {
@@ -238,25 +238,25 @@ section {
 
 .product-card {
     background: var(--text-light);
-    border-left: 4px solid var(--accent-copper);
+    border: 2px solid var(--rustic-brown);
+    border-radius: 12px;
     padding: 2.5rem 2rem;
-    text-align: left;
+    text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    border-left-color: var(--primary-wood);
+    border-color: var(--accent-gold);
 }
 
 .product-number {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--warm-tan);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--rustic-brown);
     margin-bottom: 1rem;
     line-height: 1;
 }
@@ -264,11 +264,9 @@ section {
 .product-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--primary-wood);
     margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .product-card p {
@@ -279,7 +277,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: var(--cream);
+    background: var(--warm-beige);
 }
 
 .contact-content {
@@ -299,20 +297,21 @@ section {
     gap: 0.5rem;
     background: var(--text-light);
     padding: 2rem;
-    border-top: 3px solid var(--accent-copper);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    border-top: 3px solid var(--accent-gold);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
 .info-item:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-    border-top-color: var(--primary-wood);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
 }
 
 .info-label {
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--accent-copper);
+    color: var(--accent-gold);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -321,7 +320,7 @@ section {
     font-family: 'Playfair Display', serif;
     color: var(--primary-wood);
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
@@ -336,7 +335,6 @@ section {
     color: var(--text-light);
     text-align: center;
     padding: 2rem 0;
-    border-top: 2px solid var(--accent-copper);
 }
 
 .footer p {
