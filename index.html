@@ -14,7 +14,8 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <h1><span class="logo-icon">🥩</span> Boone's Block</h1>
+                <img src="images/logo.png" alt="Boone's Block Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <h1 style="display: none;"><span class="logo-icon">🥩</span> Boone's Block</h1>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
@@ -63,6 +64,20 @@
                 <h2>Our Products</h2>
                 <div class="underline"></div>
             </div>
+            
+            <!-- Featured: Philly Cheesesteaks -->
+            <div class="featured-product">
+                <div class="featured-image">
+                    <img src="images/philly-hero.jpg" alt="Boone's Famous Philly Cheesesteaks" onerror="this.parentElement.style.display='none';">
+                </div>
+                <div class="featured-content">
+                    <span class="featured-badge">Featured</span>
+                    <h3>Our Famous Philly Cheesesteaks</h3>
+                    <p>Made with premium ribeye, authentic Amoroso rolls, and melted provolone. A taste of Philadelphia right here in the country.</p>
+                    <a href="images/menu.pdf" class="menu-link" target="_blank" onclick="return checkMenuExists(this);">View Full Menu</a>
+                </div>
+            </div>
+
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-number">01</div>
@@ -87,6 +102,26 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function checkMenuExists(link) {
+            // If menu.pdf doesn't exist, show alert
+            var xhr = new XMLHttpRequest();
+            xhr.open('HEAD', link.href, false);
+            try {
+                xhr.send();
+                if (xhr.status === 404) {
+                    alert('Menu file not yet uploaded. Please upload menu.pdf to the images folder.');
+                    return false;
+                }
+            } catch(e) {
+                // If error, likely file doesn't exist
+                alert('Menu file not yet uploaded. Please upload menu.pdf to the images folder.');
+                return false;
+            }
+            return true;
+        }
+    </script>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
